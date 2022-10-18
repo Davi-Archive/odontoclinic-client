@@ -7,4 +7,9 @@ import Home from "./Home";
 import Videos from "./Videos";
 import Contato from "./Contato";
 
-export { Home, Clinica, Cursos, Sobre, Tratamentos, ErrorPage, Contato, Videos }
+//Authentication of user
+import Login from "./User/Login";
+import Register from "./User/Register";
+import UserInfo from "./User/UserInfo";
+
+export { Home, Clinica, Cursos, Sobre, Tratamentos, ErrorPage, Contato, Videos, Login, Register, UserInfo }
