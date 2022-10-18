@@ -118,5 +118,5 @@ export const authSlice = createSlice({
 // reducer functions
 export const { reset } = authSlice.actions
 
-// reducer export
+// reducer
 export default authSlice.reducer
