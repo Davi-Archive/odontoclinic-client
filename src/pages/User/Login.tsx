@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -12,7 +12,6 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import { login, reset } from "../../features/authLogin/authSlice";
@@ -63,8 +62,8 @@ export default function Login() {
       toast.error(message);
     }
 
-    if (user) {
-      /* dispatch(loginRender()); */
+    if (isSuccess || user) {
+      navigate("/");
     }
 
     dispatch(reset());

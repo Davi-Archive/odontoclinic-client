@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
+import { useAppSelector, useAppDispatch } from "../app/hooks";
 
 const pages = [
   "Home",
@@ -23,9 +24,15 @@ const pages = [
   "Videos",
   "Contato",
 ];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+
+const settingsLogout = ["Account", "Logout"];
+const settingsLogin = ["Register", "Login"];
 
 const Navbar = () => {
+  const { user, isLoading, isError, isSuccess, message } = useAppSelector(
+    (state) => state.authLogin
+  );
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -167,17 +174,29 @@ const Navbar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography
-                    component={Link}
-                    to={`${setting}`}
-                    textAlign="center"
-                  >
-                    {setting}
-                  </Typography>
-                </MenuItem>
-              ))}
+              {user
+                ? settingsLogout.map((setting) => (
+                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                      <Typography
+                        component={Link}
+                        to={`${setting}`}
+                        textAlign="center"
+                      >
+                        {setting}
+                      </Typography>
+                    </MenuItem>
+                  ))
+                : settingsLogin.map((setting) => (
+                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                      <Typography
+                        component={Link}
+                        to={`${setting}`}
+                        textAlign="center"
+                      >
+                        {setting}
+                      </Typography>
+                    </MenuItem>
+                  ))}
             </Menu>
           </Box>
         </Toolbar>
