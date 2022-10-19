@@ -2,8 +2,15 @@ import {
   bannerHeader1,
   bannerHeader2,
   bannerHeader3,
+  logo,
 } from "../../assets";
 import Carousel from "react-bootstrap/Carousel";
+import Card from "react-bootstrap/Card";
+import Image from "react-bootstrap/Image";
+//components
+import Video from "./Video";
+import AboutSec from "./AboutSec";
+import Instagram from "./Instagram";
 
 const Home = () => {
   return (
@@ -46,6 +53,27 @@ const Home = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+      <div className="card-mid">
+        <Card border="light" style={{ width: "48rem", textAlign: "center" }}>
+          <Card.Header>
+            <Card.Title>DRA KAMILA GODOY</Card.Title>
+          </Card.Header>
+          <Card.Body>
+            <Card.Text>
+              A Dra Kamila Godoy possui uma longa caminhada de dedicação e
+              paixão pela Odontologia. Formada pela Faculdade de Odontologia da
+              Universidade de São Paulo, participa anualmente de congressos
+              nacionais e internacionais, além de ser pesquisadora no
+              Departamento de Ortodontia da Faculdade de Odontologia da
+              Universidade de São Paulo.
+            </Card.Text>
+            <Image src={logo} />
+          </Card.Body>
+        </Card>
+      </div>
+      <Video />
+      <AboutSec />
+      <Instagram />
     </>
   );
 };

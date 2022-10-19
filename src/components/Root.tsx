@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 const Root = () => {
   return (
     <>
+    <div className="wrapper-main-root">
       <nav>
         <Navbar />
       </nav>
@@ -14,6 +15,7 @@ const Root = () => {
       <footer>
         <Footer />
       </footer>
+    </div>
     </>
   );
 };
