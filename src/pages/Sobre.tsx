@@ -1,8 +1,7 @@
 import { Card, Image } from "react-bootstrap";
 import { logo, bannerHeader1, bannerHeader3, foto1 } from "../assets";
-import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
-import { BsArrowLeftSquareFill } from "react-icons/bs";
+import Voltar from "../components/Voltar";
 
 const Sobre = () => {
   const navigate = useNavigate();
@@ -106,22 +105,7 @@ const Sobre = () => {
           </Card.Text>
         </Card.Body>
       </Card>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "flex-end",
-          margin: "0 40px 10px 0",
-        }}
-      >
-        <Button
-          onClick={() => navigate("/")}
-          size="lg"
-          active
-          style={{ backgroundColor: "#785538", borderColor: "#C3A18D" }}
-        >
-          <BsArrowLeftSquareFill /> Voltar
-        </Button>
-      </div>
+      <Voltar />
     </>
   );
 };

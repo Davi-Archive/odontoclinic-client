@@ -9,13 +9,17 @@
   height: 50px;
   margin-right: 10px;
 }
+.card-component-trat {
+  display: flex;
+  margin: 50px;
+}
 
 .header-banner {
   background-size: cover;
   height: 700px;
 }
 
-.card-mid{
+.card-mid {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -205,9 +209,8 @@ body {
   }
 }
 
-
 // Section AboutSec
-.wrapper-about-sec{
+.wrapper-about-sec {
   display: grid;
   grid-template-columns: 2fr 1fr;
 }
