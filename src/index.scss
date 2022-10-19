@@ -4,8 +4,19 @@
   justify-content: center;
 }
 
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.header-banner {
+  background-size: cover;
+  height: 700px;
+}
+
 body {
-  padding-top: 68px;
+  padding-top: 69px;
 }
 @media (max-width: 979px) {
   body {

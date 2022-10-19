@@ -12,8 +12,9 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
+import { logo } from "../assets";
 
 const pages = [
   "Home",
@@ -29,9 +30,8 @@ const settingsLogout = ["Account", "Logout"];
 const settingsLogin = ["Register", "Login"];
 
 const Navbar = () => {
-  const { user, isLoading, isError, isSuccess, message } = useAppSelector(
-    (state) => state.authLogin
-  );
+  const navigate = useNavigate();
+  const userLocal = localStorage.getItem("user");
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
@@ -59,6 +59,7 @@ const Navbar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <img className="logo" src={logo} alt=""></img>
           <Typography
             variant="h6"
             noWrap
@@ -73,9 +74,7 @@ const Navbar = () => {
               color: "inherit",
               textDecoration: "none",
             }}
-          >
-            LOOGO
-          </Typography>
+          >Davi</Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -174,7 +173,7 @@ const Navbar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {user
+              {userLocal
                 ? settingsLogout.map((setting) => (
                     <MenuItem key={setting} onClick={handleCloseUserMenu}>
                       <Typography

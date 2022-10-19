@@ -41,6 +41,7 @@ const theme = createTheme();
 export default function Login() {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const localUser = localStorage.getItem('user')
   const { user, isLoading, isError, isSuccess, message } = useAppSelector(
     (state) => state.authLogin
   );
@@ -62,12 +63,12 @@ export default function Login() {
       toast.error(message);
     }
 
-    if (isSuccess || user) {
+    if (localUser) {
       navigate("/");
     }
 
     dispatch(reset());
-  }, [user, isError, isSuccess, message, navigate, dispatch]);
+  }, [user, localUser, isError, isSuccess, message, navigate, dispatch]);
 
   return (
     <>
