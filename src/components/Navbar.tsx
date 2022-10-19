@@ -6,12 +6,14 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 import { logo } from "../assets";
@@ -29,7 +31,7 @@ const pages = [
 const settingsLogout = ["Account", "Logout"];
 const settingsLogin = ["Register", "Login"];
 
-const Navbar = () => {
+const NavbarComponent = () => {
   const navigate = useNavigate();
   const userLocal = localStorage.getItem("user");
 
@@ -55,7 +57,8 @@ const Navbar = () => {
     setAnchorElUser(null);
   };
   return (
-    <AppBar position="fixed">
+    <>
+      {/*   <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
@@ -200,8 +203,30 @@ const Navbar = () => {
           </Box>
         </Toolbar>
       </Container>
-    </AppBar>
+    </AppBar> */}
+      <Navbar
+        bg="transparent"
+        variant="dark"
+        fixed="top"
+        style={{ width: "100%" }}
+      >
+        <Container>
+          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Nav className="me-auto">
+            {pages.map((page) => (
+              <>
+                <Link to={`./${page}`}>
+                  <Nav.Link key={page} href={`./${page}`}>
+                    {page}
+                  </Nav.Link>
+                </Link>
+              </>
+            ))}
+          </Nav>
+        </Container>
+      </Navbar>
+    </>
   );
 };
 
-export default Navbar;
+export default NavbarComponent;

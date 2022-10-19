@@ -15,8 +15,18 @@
   height: 700px;
 }
 
+.me-auto {
+  color: "red";
+}
+
+.nav-link {
+  font-family: "Roboto", sans-serif;
+  color: #2699fb !important;
+}
+
 body {
-  padding-top: 69px;
+  display: block;
+  width: 100%;
 }
 @media (max-width: 979px) {
   body {
