@@ -2,7 +2,10 @@ const Footer = () => {
   return (
     <>
       <div>
-        <footer className="bg-dark text-center text-white">
+        <footer
+          className="text-center text-white"
+          style={{ backgroundColor: "#C3A18D" }}
+        >
           <div className="container p-4">
             <section className="mb-4">
               <a
