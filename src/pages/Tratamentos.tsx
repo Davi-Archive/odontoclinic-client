@@ -39,10 +39,18 @@ const tratamentos = [
 const Tratamentos = () => {
   return (
     <div className="card-component-trat">
-      {tratamentos.map((tratamento:any) => (
-        <CardComponent image={tratamento.img} title={tratamento.title} />
-      )
-      )}
+      {tratamentos.map((tratamento: any) => (
+        <CardComponent
+          style={{
+            width: "30%",
+            minWidth: "20rem",
+            /* width: "28rem", */
+            margin: "10px",
+          }}
+          image={tratamento.img}
+          title={tratamento.title}
+        />
+      ))}
     </div>
   );
 };

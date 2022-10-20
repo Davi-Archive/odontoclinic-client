@@ -11,7 +11,9 @@
 }
 .card-component-trat {
   display: flex;
-  margin: 50px;
+  flex-wrap: wrap;
+  margin: 10px;
+  margin-top: 60px;
 }
 
 .header-banner {
@@ -213,4 +215,11 @@ body {
 .wrapper-about-sec {
   display: grid;
   grid-template-columns: 2fr 1fr;
+}
+
+// cursos
+.curso-header-main {
+  background: url(./assets/curso_header.jpg) center no-repeat;
+  background-size: cover;
+  height: 300px;
 }

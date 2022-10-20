@@ -4,16 +4,14 @@ import Card from "react-bootstrap/Card";
 interface PropCard {
   image: string;
   title: string;
+  style: any;
 }
 
-function CardComponent({ image, title }: PropCard) {
+function CardComponent({ style, image, title }: PropCard) {
   return (
+    <>
     <Card
-      style={{
-        minWidth: "20rem",
-        width: "28rem",
-        margin: "10px",
-      }}
+      style={style}
       className="card-box"
     >
       {image}
@@ -27,6 +25,7 @@ function CardComponent({ image, title }: PropCard) {
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card>
+    </>
   );
 }
 
