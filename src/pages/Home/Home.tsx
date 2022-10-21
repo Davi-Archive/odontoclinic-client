@@ -18,7 +18,7 @@ const Home = () => {
       <Carousel variant="dark" fade>
         <Carousel.Item>
           <img
-            className="header-banner d-block w-100"
+            className="header-banner w-100"
             src={bannerHeader1}
             alt="First slide"
           />
@@ -72,7 +72,7 @@ const Home = () => {
         </Card>
       </div>
       <Video />
-      <AboutSec />
+      {/* <AboutSec />  PROBLEM ON MOBILE */}
       <Instagram />
     </>
   );

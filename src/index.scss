@@ -3,6 +3,9 @@
   padding: 0;
   justify-content: center;
 }
+.wrapper-main-root{
+  width: auto;
+}
 
 .logo {
   width: 50px;
@@ -36,10 +39,7 @@
   color: #2699fb !important;
 }
 
-body {
-  width: 100%;
-  max-width: 1480px;
-}
+
 
 @media (max-width: 979px) {
   body {
